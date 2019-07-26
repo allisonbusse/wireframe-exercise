@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     background: white;
@@ -9,50 +7,59 @@ body {
 
 .feature-text p {
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1em;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.feature-text h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    margin: 14px 0;
 }
 
 .grid {
     width: 960px;
     margin: 0 auto;
     display: grid;
+    grid-row-gap: 30px;
     grid-template-columns: 480px 480px;
-    grid-template-rows: 100px 460px 405px 460px 100px;
-    grid-template-areas: "header header"
-                         "hero-image hero-image"
+    grid-template-rows: 400px 375px 460px;
+    grid-template-areas: "hero-image hero-image"
                          "image-split image-split"
                          "feature-image feature-text"
-                         "footer footer"
 }
 
 header {
     background: #666;
-    margin: 0 auto;
-    grid-area: header;
+    margin-bottom: 30px;
+    padding: 10px 0;
 }
 
+
 nav {
-    padding: 20px 0;
-    margin-bottom: 50px;
-    width: 960px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 960px;
 }
 
 nav li {
+    vertical-align: middle;
     display: inline;
     color: white;
     padding: 0 40px;
 }
 
+
 .hero-image {
     grid-area: hero-image;
-    margin: 30px 0;
 }
 
 .image-split {
     grid-area: image-split;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
 }
 
 .feature-image {
@@ -61,22 +68,43 @@ nav li {
 
 .feature-text {
     grid-area: feature-text;
+    display: grid;
+    height: 460px;
+    grid-template-rows: 50px 370px 40px;
+    grid-template-areas: "feature-header"
+    "scrollable"
+    "button"
+}
+
+.scrollable {
     overflow: scroll;
+    grid-area: scrollable;
+    margin-bottom: 10px;
+}
+
+.feature-header {
+    grid-area: feature-header;
 }
 
 footer {
-    grid-area: footer;
     background: #666;
+    width: 100%;
+    height: 80px;
     margin-top: 30px;
 }
-
 
 
 button {
     background: black;
     color: white;
     padding: 15px;
+    width: 150px;
     font-size: 14px;
+    transition: 350ms;
+    grid-area: button
+}
 
+button:hover {
+    background: #666;
 }
 
